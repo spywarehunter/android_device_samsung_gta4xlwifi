@@ -1,0 +1,3 @@
+ro.boot.dynamic_partitions=true
+ro.boot.bootdevice=13520000.ufs
+sys.usb.controller=13200000.dwc3

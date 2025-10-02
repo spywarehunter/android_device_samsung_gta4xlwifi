@@ -1,6 +1,6 @@
 sudo pacman -S git gnupg python repo ncurses
 
-mkdir twrp 
+mkdir twrp \
 cd twrp    
 
 repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1     
@@ -13,7 +13,7 @@ cd
 
 git clone https://github.com/spywarehunter/android_device_samsung_gta4xlwifi.git
 
-mv android_device_samsung_gta4xlwifi gta4xlwifi 
+mv android_device_samsung_gta4xlwifi gta4xlwifi \
 mv gta4xlwifi ~/twrp/device/samsung
 
 cd twrp

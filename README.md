@@ -1,19 +1,19 @@
-### Install dependencies ###
+### Install dependencies 
 
 # On Arch Linux
     sudo pacman -S git gnupg python repo ncurses
 
-### Prepare the Workspace ###
+### Prepare the Workspace 
 
 # Create your TWRP working directory and enter it 
     mkdir ~/twrp && cd ~/twrp
     
 # initialize and sync the minimal sources for TWRP building
     repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1     
-
+#
     repo sync --force-sync --no-clone-bundle --no-tags --optimized-fetch -j$(nproc)
     
-### Clone the TWRP Device Tree ###
+### Clone the TWRP Device Tree
 
 # Create the vendor directory and enter it 
     mkdir device/samsung && cd device/samsung
@@ -25,10 +25,10 @@
 # Go back to the TWRP root directory
     cd ~/twrp
 
-### Set Up the Build Environment ###
+### Set Up the Build Environment 
     export ALLOW_MISSING_DEPENDENCIES=true; 
     . build/envsetup.sh; 
     lunch twrp_gta4xlwifi-eng
     
-### Build TWRP recovery image ###
+### Build TWRP recovery image 
     mka recoveryimage -j$(nproc)

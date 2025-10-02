@@ -20,6 +20,7 @@
     
 # Clone and rename the device tree repo directory
     git clone https://github.com/spywarehunter/android_device_samsung_gta4xlwifi.git
+#
     mv android_device_samsung_gta4xlwifi gta4xlwifi
     
 # Go back to the TWRP root directory

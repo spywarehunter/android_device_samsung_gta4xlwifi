@@ -1,19 +1,23 @@
-## Install git gnupg python repo ##
+sudo pacman -S git gnupg python repo ncurses
 
-## Arch Linux
-    sudo pacman -S git gnupg python repo
+mkdir twrp 
+cd twrp    
 
-## Clone the TWRP device tree repository ##
-    git clone https://github.com/spywarehunter/android_device_samsung_gta4xlwifi.git
+repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1     
 
-    cd android_device_samsung_gta4xlwifi
+repo sync --optimized-fetch -j$(nproc) 
 
-## initialize your local repository using the AOSP trees to build TWRP
-    repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1 
-## Sync
-    repo sync --optimized-fetch -j$(nproc) 
-    
-## Setup to build
-    export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta4xlwifi-eng
-## Build
-    mka recoveryimage
+mkdir device/samsung
+
+cd
+
+git clone https://github.com/spywarehunter/android_device_samsung_gta4xlwifi.git
+
+mv android_device_samsung_gta4xlwifi gta4xlwifi 
+mv gta4xlwifi ~/twrp/device/samsung
+
+cd twrp
+
+export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta4xlwifi-eng
+
+mka recoveryimage

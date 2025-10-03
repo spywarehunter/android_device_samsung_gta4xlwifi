@@ -26,7 +26,7 @@
 # Go back to the TWRP root directory
     cd ~/twrp
 
-### Set Up the build environment 
+### Set up the build environment 
     export ALLOW_MISSING_DEPENDENCIES=true; 
     . build/envsetup.sh; 
     lunch twrp_gta4xlwifi-eng
